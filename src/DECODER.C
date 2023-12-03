@@ -1,7 +1,7 @@
 #include "DECODER.H"
 
 /* Ensure that bytes are are arranged in the little-endian order. */
-uint32_t swap_endians_uint32(uint32_t value) {
+uint64_t swap_endians_uint32(uint64_t value) {
 	return ((value >> 24) & 0x000000FF) | ((value >> 8) & 0x0000FF00) |
            ((value << 8) & 0x00FF0000) | ((value << 24) & 0xFF000000);
 }
@@ -21,7 +21,7 @@ PNGDataStream *decode_graph_file(FILE *graphFileDesc) {
 
 		/* x89PNGx0Dx0Ax1Ax0A is the header signature value of a PNG graphical file. */
     	/* It is converted to hex representation of itself: \x89PNG\r\n\x1a\n. */
-		if (memcmp(chunk->signature, "\x89PNG\r\n\x1a\n", 8) != 0) {
+		if (memcmp(&(chunk->signature), "\x89PNG\r\n\x1a\n", 8) != 0) {
 			fprintf(stderr, "Error: invalid signature header\n");
 			free(chunk);
 			return NULL;

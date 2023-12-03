@@ -2,23 +2,12 @@
 #define VIDMODE_H
 
 #include <stdio.h>
-#include <dos.h>
+#include <png.h>
+#include <stdint.h>
 
-#define SCREEN_WIDTH 320
-#define SCREEN_HEIGHT 200
+#define BUFSIZE 1024
 
-#define AH_SET_MODE 0x0
-#define AL_VGA_COLOR_MODE 0x13
-#define AL_VGA_COLOR_MODE_16 0x0D
-#define VIDEO_INTERRUPT 0x10
-#define VGA_TEXT_MODE 0x03
-
-typedef unsigned char byte;
-
-void set_pixels();
-void set_mode(byte mode);
-void displayWithVideoMode();
-void read_png_file(char *filename);
-void process_png(void);
+png_bytep* decode_png(char *filename, uint8_t bit_depth, uint8_t color_type, uint32_t width, uint32_t height);
+void rgb_rgba_processing(uint32_t i_width, uint32_t i_height);
 
 #endif
