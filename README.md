@@ -107,3 +107,17 @@ ___
 ## Пример отображения в видеорежиме 320x200x16:
 
 ![main](https://i.imgur.com/M1MlG2v.png)
+
+___
+## Пример чтения фрагментов PNG (Chunks)
+
+Чтобы передать графический файл в программу: `MAIN.EXE IMGS\IMG.PNG`
+
+Передача `imgs\img.png` вторым аргументом в MAIN.EXE
+
+![main](https://i.imgur.com/oWYH9TZ.png)
+
+Передача `imgs\img.jpg` вторым аргументом в MAIN.EXE
+
+![main](https://i.imgur.com/aDg7bwu.png)
+
