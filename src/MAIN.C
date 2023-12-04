@@ -34,6 +34,7 @@ int main(int argc, char **argv) {
             } else {     
                 wait_func();
                 displayWithVideoMode();
+		free(dv);
             }
             fclose(fp);
         }
