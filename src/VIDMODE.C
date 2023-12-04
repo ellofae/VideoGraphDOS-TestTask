@@ -27,6 +27,7 @@ void displayWithVideoMode() {
     set_pixels();
 
     getchar();
+    getchar();
 
     set_mode(AL_VGA_COLOR_MODE_16);
     set_pixels();
